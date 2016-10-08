@@ -26,35 +26,23 @@ class AdvertisementView: UIView {
         webView!.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         addSubview(webView!)
-        addConstraintsToWebView()
+        addConstraintsFor(subview: webView!)
         addSubview(button)
-        addConstraintsToButton()
+        addConstraintsFor(subview: button)
     }
 
-    func addConstraintsToButton() {
-        let leftConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: button, attribute: .trailing, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: button, attribute: .leading, multiplier: 1, constant: 0)
-        let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: button, attribute: .top, multiplier: 1, constant: 0)
-        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 1, constant: 0)
-
-        addConstraint(leftConstraint)
-        addConstraint(rightConstraint)
-        addConstraint(heightConstraint)
-        addConstraint(topConstraint)
-    }
-    
-    func addConstraintsToWebView() {
-        let leftConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: webView, attribute: .trailing, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: webView, attribute: .leading, multiplier: 1, constant: 0)
-        let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: webView, attribute: .top, multiplier: 1, constant: 0)
-        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: webView, attribute: .height, multiplier: 1, constant: 0)
+    func addConstraintsFor(subview: UIView) {
+        let leftConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: subview, attribute: .trailing, multiplier: 1, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: subview, attribute: .leading, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: subview, attribute: .top, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: subview, attribute: .height, multiplier: 1, constant: 0)
         
         addConstraint(leftConstraint)
         addConstraint(rightConstraint)
         addConstraint(heightConstraint)
         addConstraint(topConstraint)
     }
-    
+
     func addConfigurationToWebView() {
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = true
