@@ -15,6 +15,7 @@
 		3D0168A41DA80F8700454C8A /* AdMoviePlayerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0168A31DA80F8700454C8A /* AdMoviePlayerDemoTests.swift */; };
 		3D0168AF1DA80F8700454C8A /* AdMoviePlayerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0168AE1DA80F8700454C8A /* AdMoviePlayerDemoUITests.swift */; };
 		3D0168BE1DA80FA800454C8A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0168BD1DA80FA800454C8A /* WebKit.framework */; };
+		3D53A6281DA9985400D47879 /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A6271DA9985400D47879 /* AdvertisementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3D0168AE1DA80F8700454C8A /* AdMoviePlayerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMoviePlayerDemoUITests.swift; sourceTree = "<group>"; };
 		3D0168B01DA80F8700454C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0168BD1DA80FA800454C8A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		3D53A6271DA9985400D47879 /* AdvertisementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		3D0168821DA80F8600454C8A = {
 			isa = PBXGroup;
 			children = (
+				3D53A6271DA9985400D47879 /* AdvertisementView.swift */,
 				3D01688D1DA80F8600454C8A /* AdMoviePlayerDemo */,
 				3D0168A21DA80F8700454C8A /* AdMoviePlayerDemoTests */,
 				3D0168AD1DA80F8700454C8A /* AdMoviePlayerDemoUITests */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0168911DA80F8600454C8A /* ViewController.swift in Sources */,
+				3D53A6281DA9985400D47879 /* AdvertisementView.swift in Sources */,
 				3D01688F1DA80F8600454C8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +524,7 @@
 				3D0168B51DA80F8700454C8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D0168B61DA80F8700454C8A /* Build configuration list for PBXNativeTarget "AdMoviePlayerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				3D0168B81DA80F8700454C8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D0168B91DA80F8700454C8A /* Build configuration list for PBXNativeTarget "AdMoviePlayerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				3D0168BB1DA80F8700454C8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
