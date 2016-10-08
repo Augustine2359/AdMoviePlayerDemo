@@ -16,6 +16,7 @@
 		3D0168AF1DA80F8700454C8A /* AdMoviePlayerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0168AE1DA80F8700454C8A /* AdMoviePlayerDemoUITests.swift */; };
 		3D0168BE1DA80FA800454C8A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0168BD1DA80FA800454C8A /* WebKit.framework */; };
 		3D53A6281DA9985400D47879 /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A6271DA9985400D47879 /* AdvertisementView.swift */; };
+		3D53A62A1DA9B09900D47879 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A6291DA9B09900D47879 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3D0168B01DA80F8700454C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0168BD1DA80FA800454C8A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3D53A6271DA9985400D47879 /* AdvertisementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
+		3D53A6291DA9B09900D47879 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				3D01688E1DA80F8600454C8A /* AppDelegate.swift */,
 				3D0168901DA80F8600454C8A /* ViewController.swift */,
+				3D53A6291DA9B09900D47879 /* RootViewController.swift */,
 				3D0168921DA80F8600454C8A /* Main.storyboard */,
 				3D0168951DA80F8600454C8A /* Assets.xcassets */,
 				3D0168971DA80F8600454C8A /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 			files = (
 				3D0168911DA80F8600454C8A /* ViewController.swift in Sources */,
 				3D53A6281DA9985400D47879 /* AdvertisementView.swift in Sources */,
+				3D53A62A1DA9B09900D47879 /* RootViewController.swift in Sources */,
 				3D01688F1DA80F8600454C8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
