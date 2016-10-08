@@ -13,10 +13,29 @@ class ViewController: UIViewController {
     var webView: WKWebView
 
     required init?(coder aDecoder: NSCoder) {
-        webView = WKWebView()
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        
+        if #available(iOS 10.0, *) {
+            configuration.mediaTypesRequiringUserActionForPlayback = []
+        }
+        else if #available(iOS 9.0, *) {
+            configuration.requiresUserActionForMediaPlayback = false
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        let userContentController = WKUserContentController()
+        var userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        userContentController.addUserScript(userScript)
+        userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].removeAttribute('controls')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        userContentController.addUserScript(userScript)
+        configuration.userContentController = userContentController
+        webView = WKWebView(frame: .zero, configuration: configuration)
         webView.translatesAutoresizingMaskIntoConstraints = false
 
         super.init(coder: aDecoder)
+        webView.navigationDelegate = self
     }
     
     override func viewDidLoad() {
@@ -26,6 +45,11 @@ class ViewController: UIViewController {
         view.addSubview(webView)
 
         addConstraintsToWebView()
+
+        let urlString = "http://hitokuse.com/videos/top-video.mp4"
+        let url = URL(string: urlString)!
+        let urlRequest = URLRequest(url: url)
+        webView.load(urlRequest)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -48,3 +72,19 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print("did commit")
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error)
+        print("failed")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print(error)
+        print(navigation)
+        print("failed provisioning")
+    }
+}
