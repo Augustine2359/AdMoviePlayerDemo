@@ -43,7 +43,7 @@
         <!--TableView-->
         <scene sceneID="dGH-rv-0CQ">
             <objects>
-                <viewController id="WLM-fZ-Odg" sceneMemberID="viewController">
+                <viewController id="WLM-fZ-Odg" customClass="TableDemoViewController" customModule="AdMoviePlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Nq-IS-bAP"/>
                         <viewControllerLayoutGuide type="bottom" id="7ve-IT-tT4"/>
@@ -51,9 +51,59 @@
                     <view key="view" contentMode="scaleToFill" id="dkk-hX-ufG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ge-oJ-9VS">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Content" id="Jyq-yP-Ghs">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jyq-yP-Ghs" id="9h0-8G-2WU">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Advertisement" id="AS4-M6-mXx" customClass="AdvertisementTableViewCell" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AS4-M6-mXx" id="e8M-zv-dBg">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-Gy-Wqr" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TzB-Gy-Wqr" firstAttribute="leading" secondItem="e8M-zv-dBg" secondAttribute="leading" id="1Fx-zb-4ZC"/>
+                                                <constraint firstItem="TzB-Gy-Wqr" firstAttribute="top" secondItem="e8M-zv-dBg" secondAttribute="top" id="CJn-WN-lJo"/>
+                                                <constraint firstAttribute="bottom" secondItem="TzB-Gy-Wqr" secondAttribute="bottom" id="eI7-a0-oCQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="TzB-Gy-Wqr" secondAttribute="trailing" id="mdF-WH-fKS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="advertisementView" destination="TzB-Gy-Wqr" id="oU0-Xm-L1D"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WLM-fZ-Odg" id="LWE-ut-Mhz"/>
+                                    <outlet property="delegate" destination="WLM-fZ-Odg" id="CHl-2o-rnY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7ve-IT-tT4" firstAttribute="top" secondItem="2Ge-oJ-9VS" secondAttribute="bottom" id="5QF-AM-SBs"/>
+                            <constraint firstItem="2Ge-oJ-9VS" firstAttribute="top" secondItem="6Nq-IS-bAP" secondAttribute="bottom" id="DAN-fA-KhD"/>
+                            <constraint firstItem="2Ge-oJ-9VS" firstAttribute="leading" secondItem="dkk-hX-ufG" secondAttribute="leading" id="LrN-im-faL"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ge-oJ-9VS" secondAttribute="trailing" id="a4p-ZM-LCg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="TableView" id="qGd-00-vkA"/>
+                    <connections>
+                        <outlet property="tableView" destination="2Ge-oJ-9VS" id="Co3-Kr-uZw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HV-hZ-Pog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

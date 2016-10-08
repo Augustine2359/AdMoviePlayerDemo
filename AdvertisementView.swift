@@ -14,13 +14,24 @@ class AdvertisementView: UIView {
     var webView: WKWebView?
     var button: UIButton
     var redirectURLString: String?
-
+    
     required init?(coder aDecoder: NSCoder) {
         button = UIButton(type: .custom)
         super.init(coder: aDecoder)
 
+        defaultInitializations()
+    }
+    
+    init() {
+        button = UIButton(type: .custom)
+        super.init(frame: .zero)
+        
+        defaultInitializations()
+    }
+    
+    func defaultInitializations() {
+        backgroundColor = UIColor.clear
         button.addTarget(self, action: #selector(onTap), for: UIControlEvents.touchUpInside)
-
         addConfigurationToWebView()
         translatesAutoresizingMaskIntoConstraints = false
         webView!.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +41,7 @@ class AdvertisementView: UIView {
         addSubview(button)
         addConstraintsFor(subview: button)
     }
-
+    
     func addConstraintsFor(subview: UIView) {
         let leftConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: subview, attribute: .trailing, multiplier: 1, constant: 0)
         let rightConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: subview, attribute: .leading, multiplier: 1, constant: 0)
@@ -42,11 +53,11 @@ class AdvertisementView: UIView {
         addConstraint(heightConstraint)
         addConstraint(topConstraint)
     }
-
+    
     func addConfigurationToWebView() {
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = true
-
+        
         if #available(iOS 10.0, *) {
             configuration.mediaTypesRequiringUserActionForPlayback = []
         }
@@ -64,7 +75,7 @@ class AdvertisementView: UIView {
         configuration.userContentController = userContentController
         webView = WKWebView(frame: .zero, configuration: configuration)
     }
-
+    
     func playAdvertisement(urlString:String) {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
@@ -74,13 +85,13 @@ class AdvertisementView: UIView {
     
     func onTap() {
         let script = "document.getElementsByTagName('video')[0].pause();"
-
+        
         webView!.evaluateJavaScript(script, completionHandler: nil)
         
         guard (redirectURLString == nil) else {
             let url = URL(string: redirectURLString!)!
             UIApplication.shared.openURL(url)
-
+            
             return
         }
     }
