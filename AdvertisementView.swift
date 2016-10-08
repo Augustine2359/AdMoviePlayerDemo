@@ -13,7 +13,8 @@ import WebKit
 class AdvertisementView: UIView {
     var webView: WKWebView?
     var button: UIButton
-    
+    var redirectURLString: String?
+
     required init?(coder aDecoder: NSCoder) {
         button = UIButton(type: .custom)
         super.init(coder: aDecoder)
@@ -84,8 +85,15 @@ class AdvertisementView: UIView {
     }
     
     func onTap() {
-        let script = "var video = document.getElementsByTagName('video')[0]; if (video.paused)video.play();else video.pause();"
-    
+        let script = "document.getElementsByTagName('video')[0].pause();"
+
         webView!.evaluateJavaScript(script, completionHandler: nil)
+        
+        guard (redirectURLString == nil) else {
+            let url = URL(string: redirectURLString!)!
+            UIApplication.shared.openURL(url)
+
+            return
+        }
     }
 }

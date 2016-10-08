@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
         view.backgroundColor = UIColor.red
         advertisementView.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+        advertisementView.redirectURLString = "http://hitokuse.com"
     }
 
     override func didReceiveMemoryWarning() {
