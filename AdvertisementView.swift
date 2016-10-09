@@ -106,9 +106,14 @@ class AdvertisementView: UIView {
     }
     
     func onTap() {
-//        let script = "document.getElementsByTagName('video')[0].pause();"
-        
-//        webView!.evaluateJavaScript(script, completionHandler: nil)
+        let script = "document.getElementsByTagName('video')[0].pause();"
+
+        if let wkWebView = webView as? WKWebView {
+            wkWebView.evaluateJavaScript(script, completionHandler: nil)
+        }
+        else if let uiWebView = webView as? UIWebView {
+            uiWebView.stringByEvaluatingJavaScript(from: script)
+        }
         
         guard (redirectURLString == nil) else {
             let url = URL(string: redirectURLString!)!
@@ -120,28 +125,15 @@ class AdvertisementView: UIView {
 }
 
 extension AdvertisementView: UIWebViewDelegate {
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        print("did start load")
-        
-        //        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')"))
-        //        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].removeAttribute('controls')"))
-        //                var userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        //                userContentController.addUserScript(userScript)
-        //                userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].removeAttribute('controls')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        //        webView.evaluate
-        
+    func removeControlsAndForceInline(webView: UIWebView) {
+        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')")
+        webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].removeAttribute('controls')")
     }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        print("did finish load")
+        removeControlsAndForceInline(webView: webView)
     }
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-//        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')"))
-//        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].removeAttribute('controls')"))
-        print("fail load")
-        print(error)
-    }
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print("should start load")
-        return true
+        removeControlsAndForceInline(webView: webView)
     }
 }
