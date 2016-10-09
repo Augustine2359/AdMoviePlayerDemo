@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jyq-yP-Ghs" id="9h0-8G-2WU">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AS4-M6-mXx" id="e8M-zv-dBg">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-Gy-Wqr" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
@@ -148,22 +148,27 @@
                                             </subviews>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Advertisement" id="3MF-nm-bGG">
-                                        <rect key="frame" x="73" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Advertisement" id="3MF-nm-bGG" customClass="AdvertisementCollectionViewCell" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                        <rect key="frame" x="73.5" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advertisement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jI-Hw-7EH">
-                                                    <frame key="frameInset" minX="4" minY="14" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJK-x0-6UE" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="gJK-x0-6UE" firstAttribute="leading" secondItem="3MF-nm-bGG" secondAttribute="leading" id="EbA-yr-zHe"/>
+                                            <constraint firstAttribute="trailing" secondItem="gJK-x0-6UE" secondAttribute="trailing" id="I6z-k5-SDw"/>
+                                            <constraint firstAttribute="bottom" secondItem="gJK-x0-6UE" secondAttribute="bottom" id="htc-qW-yux"/>
+                                            <constraint firstItem="gJK-x0-6UE" firstAttribute="top" secondItem="3MF-nm-bGG" secondAttribute="top" id="zkW-tq-qVS"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="advertisementView" destination="gJK-x0-6UE" id="1Yz-M5-2nH"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

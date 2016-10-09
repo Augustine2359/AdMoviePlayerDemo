@@ -19,6 +19,7 @@
 		3D53A62E1DA9B5EB00D47879 /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A62D1DA9B5EB00D47879 /* AdvertisementView.swift */; };
 		3D53A6301DA9B7D600D47879 /* AdvertisementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */; };
 		3D53A6321DA9C2EE00D47879 /* CollectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */; };
+		3DF3AAB11DAA97AB0088135F /* AdvertisementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3D53A62D1DA9B5EB00D47879 /* AdvertisementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
 		3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertisementTableViewCell.swift; path = AdMoviePlayerDemo/AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
 		3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDemoViewController.swift; sourceTree = "<group>"; };
+		3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				3D53A62D1DA9B5EB00D47879 /* AdvertisementView.swift */,
 				3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */,
+				3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */,
 				3D01688D1DA80F8600454C8A /* AdMoviePlayerDemo */,
 				3D0168A21DA80F8700454C8A /* AdMoviePlayerDemoTests */,
 				3D0168AD1DA80F8700454C8A /* AdMoviePlayerDemoUITests */,
@@ -287,6 +290,7 @@
 				3D53A62E1DA9B5EB00D47879 /* AdvertisementView.swift in Sources */,
 				3D53A62C1DA9B20000D47879 /* TableDemoViewController.swift in Sources */,
 				3D0168911DA80F8600454C8A /* ViewController.swift in Sources */,
+				3DF3AAB11DAA97AB0088135F /* AdvertisementCollectionViewCell.swift in Sources */,
 				3D53A6321DA9C2EE00D47879 /* CollectionDemoViewController.swift in Sources */,
 				3D01688F1DA80F8600454C8A /* AppDelegate.swift in Sources */,
 				3D53A6301DA9B7D600D47879 /* AdvertisementTableViewCell.swift in Sources */,
