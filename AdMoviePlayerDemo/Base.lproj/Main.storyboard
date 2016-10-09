@@ -147,6 +147,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Advertisement" id="3MF-nm-bGG" customClass="AdvertisementCollectionViewCell" customModule="AdMoviePlayerDemo" customModuleProvider="target">
                                         <rect key="frame" x="73" y="0.0" width="50" height="50"/>
