@@ -18,7 +18,7 @@ extension TableDemoViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row % 10 == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement") as! AdvertisementTableViewCell
             cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
-            cell.redirectURL = "http://hitokuse.com"
+            cell.advertisementView.delegate = self
             return cell
         }
         else {
@@ -30,5 +30,12 @@ extension TableDemoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
+    }
+}
+
+extension TableDemoViewController: AdvertisementViewDelegate {
+    func onTapAdvertisement() {
+        let url = URL(string: "http://hitokuse.com")!
+        UIApplication.shared.openURL(url)
     }
 }

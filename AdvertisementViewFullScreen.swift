@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol AdvertisementViewFullScreenManagerProtocol {
-    func onDismissFullScreenAdvertisement()
-}
-
 class AdvertisementViewFullScreenManager {
     static let sharedInstance = AdvertisementViewFullScreenManager()
     var blockingView: UIView?
@@ -34,8 +30,8 @@ class AdvertisementViewFullScreenManager {
             addConstraintsFor(superview: blockingView!, subview: advertisementView!)
 
             advertisementView?.playAdvertisement(urlString: stringURL)
-            advertisementView?.redirectURLString = redirectURLString
-            
+            advertisementView?.delegate = self
+
             let touch = UITapGestureRecognizer(target: self, action: #selector(onTap))
             blockingView!.addGestureRecognizer(touch)
             
@@ -67,7 +63,7 @@ class AdvertisementViewFullScreenManager {
     }
 
     @objc func onTap() {
-        if (timeToTurnOnUserInteraction > 0) {
+        if (timeToTurnOnUserInteraction! > 0) {
             return
         }
 
@@ -89,5 +85,15 @@ class AdvertisementViewFullScreenManager {
         superview.addConstraint(rightConstraint)
         superview.addConstraint(topConstraint)
         superview.addConstraint(bottomConstraint)
+    }
+}
+
+extension AdvertisementViewFullScreenManager: AdvertisementViewDelegate {
+    func onTapAdvertisement() {
+        let url = URL(string: "http://hitokuse.com")!
+        UIApplication.shared.openURL(url)
+        advertisementView?.pauseAdvertisement()
+        blockingView?.removeFromSuperview()
+        segueAfterDismiss = nil
     }
 }

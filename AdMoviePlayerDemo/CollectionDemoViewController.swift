@@ -41,18 +41,25 @@ extension CollectionDemoViewController: UICollectionViewDataSource, UICollection
         if (indexPath.row % 5 == 3) {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Advertisement", for: indexPath) as? AdvertisementCollectionViewCell {
                 cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
-                cell.redirectURL = "http://hitokuse.com"
+                cell.advertisementView.delegate = self
                 return cell
             }
 
             let cell = AdvertisementCollectionViewCell(frame: .zero)
             cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
-            cell.redirectURL = "http://hitokuse.com"
+            cell.advertisementView.delegate = self
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Content", for: indexPath)
             return cell
         }
+    }
+}
+
+extension CollectionDemoViewController: AdvertisementViewDelegate {
+    func onTapAdvertisement() {
+        let url = URL(string: "http://hitokuse.com")!
+        UIApplication.shared.openURL(url)
     }
 }

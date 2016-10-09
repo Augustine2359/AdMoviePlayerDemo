@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 import WebKit
 
+protocol AdvertisementViewDelegate {
+    func onTapAdvertisement()
+}
+
 class AdvertisementView: UIView {
     var webView: UIView?
     var button: UIButton
-    var redirectURLString: String?
+    var delegate: AdvertisementViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         button = UIButton(type: .custom)
@@ -107,13 +111,7 @@ class AdvertisementView: UIView {
     
     func onTap() {
         pauseAdvertisement()
-        
-        guard (redirectURLString == nil) else {
-            let url = URL(string: redirectURLString!)!
-            UIApplication.shared.openURL(url)
-            
-            return
-        }
+        delegate?.onTapAdvertisement()        
     }
     
     func pauseAdvertisement() {

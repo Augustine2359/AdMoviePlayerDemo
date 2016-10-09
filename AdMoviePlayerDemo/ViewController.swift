@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        advertisementView.redirectURLString = "http://hitokuse.com"
+        advertisementView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,5 +26,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         advertisementView.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+    }
+}
+
+extension ViewController: AdvertisementViewDelegate {
+    func onTapAdvertisement() {
+        let url = URL(string: "http://hitokuse.com")!
+        UIApplication.shared.openURL(url)
     }
 }

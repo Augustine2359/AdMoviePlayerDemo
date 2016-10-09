@@ -11,14 +11,6 @@ import UIKit
 
 class AdvertisementCollectionViewCell: UICollectionViewCell {
     @IBOutlet var advertisementView: AdvertisementView!
-    var redirectURL: String? {
-        set {
-            advertisementView.redirectURLString = newValue
-        }
-        get {
-            return advertisementView.redirectURLString
-        }
-    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
