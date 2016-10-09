@@ -11,7 +11,7 @@ import UIKit
 import WebKit
 
 class AdvertisementView: UIView {
-    var webView: WKWebView?
+    var webView: UIView?
     var button: UIButton
     var redirectURLString: String?
     
@@ -32,6 +32,7 @@ class AdvertisementView: UIView {
     func defaultInitializations() {
         backgroundColor = UIColor.clear
         button.addTarget(self, action: #selector(onTap), for: UIControlEvents.touchUpInside)
+
         addConfigurationToWebView()
         webView!.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +54,7 @@ class AdvertisementView: UIView {
         addConstraint(topConstraint)
     }
     
-    func addConfigurationToWebView() {
+    func useWKWebView() {
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = true
         
@@ -75,17 +76,39 @@ class AdvertisementView: UIView {
         webView = WKWebView(frame: .zero, configuration: configuration)
     }
     
+    func useUIWebView() {
+        webView = UIWebView(frame: .zero)
+        let uiWebView = webView as? UIWebView
+        uiWebView?.delegate = self
+        uiWebView?.mediaPlaybackRequiresUserAction = false
+        uiWebView?.allowsInlineMediaPlayback = true
+    }
+    
+    func addConfigurationToWebView() {
+        if #available(iOS 9.0, *) {
+            useWKWebView()
+        }
+        else {
+            useUIWebView()
+        }
+    }
+    
     func playAdvertisement(urlString:String) {
         if let url = URL(string: urlString) {
             let urlRequest = URLRequest(url: url)
-            webView!.load(urlRequest)
+            if let wkWebView = webView as? WKWebView {
+                wkWebView.load(urlRequest)
+            }
+            else if let uiWebView = webView as? UIWebView {
+                uiWebView.loadRequest(urlRequest)
+            }
         }
     }
     
     func onTap() {
-        let script = "document.getElementsByTagName('video')[0].pause();"
+//        let script = "document.getElementsByTagName('video')[0].pause();"
         
-        webView!.evaluateJavaScript(script, completionHandler: nil)
+//        webView!.evaluateJavaScript(script, completionHandler: nil)
         
         guard (redirectURLString == nil) else {
             let url = URL(string: redirectURLString!)!
@@ -93,5 +116,32 @@ class AdvertisementView: UIView {
             
             return
         }
+    }
+}
+
+extension AdvertisementView: UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        print("did start load")
+        
+        //        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')"))
+        //        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].removeAttribute('controls')"))
+        //                var userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        //                userContentController.addUserScript(userScript)
+        //                userScript = WKUserScript(source: "document.getElementsByTagName('video')[0].removeAttribute('controls')", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        //        webView.evaluate
+        
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("did finish load")
+    }
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+//        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].setAttribute('webkit-playsinline', '')"))
+//        print(webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('video')[0].removeAttribute('controls')"))
+        print("fail load")
+        print(error)
+    }
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("should start load")
+        return true
     }
 }
