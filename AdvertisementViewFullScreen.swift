@@ -18,7 +18,10 @@ class AdvertisementViewFullScreenManager {
     var blockingView: UIView?
     var advertisementView: AdvertisementView?
     var segueAfterDismiss: (performingViewController: UIViewController, segueIdentifier: String)?
-
+    var countdownLabel: UILabel?
+    var countdownTimer: Timer?
+    var timeToTurnOnUserInteraction: Int?
+    
     func blockScreen(withVideo stringURL:String, redirectURLString:String) {
         if let window = UIApplication.shared.keyWindow {
             blockingView = UIView(frame: CGRect(x: 0, y: 0, width: window.frame.size.width, height: window.frame.size.height))
@@ -35,10 +38,39 @@ class AdvertisementViewFullScreenManager {
             
             let touch = UITapGestureRecognizer(target: self, action: #selector(onTap))
             blockingView!.addGestureRecognizer(touch)
+            
+            countdownLabel = UILabel()
+            countdownLabel?.translatesAutoresizingMaskIntoConstraints = false
+            countdownLabel?.textColor = UIColor.red
+            countdownLabel?.textAlignment = .center
+            blockingView!.addSubview(countdownLabel!)
+            let leftConstraint = NSLayoutConstraint(item: blockingView!, attribute: .trailing, relatedBy: .equal, toItem: countdownLabel, attribute: .trailing, multiplier: 1, constant: 0)
+            let rightConstraint = NSLayoutConstraint(item: blockingView!, attribute: .leading, relatedBy: .equal, toItem: countdownLabel, attribute: .leading, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: blockingView!, attribute: .bottom, relatedBy: .equal, toItem: countdownLabel, attribute: .bottom, multiplier: 1, constant: 150)
+            blockingView?.addConstraint(leftConstraint)
+            blockingView?.addConstraint(rightConstraint)
+            blockingView?.addConstraint(bottomConstraint)
+            
+            timeToTurnOnUserInteraction = 5
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountdownLabel), userInfo: nil, repeats: true)
         }
     }
     
+    @objc func updateCountdownLabel(timer: Timer) {
+        timeToTurnOnUserInteraction! -= 1
+        countdownLabel?.text = String(timeToTurnOnUserInteraction!) + "秒を待ちください"
+        if (timeToTurnOnUserInteraction == 0) {
+            blockingView?.isUserInteractionEnabled = true
+            countdownLabel?.removeFromSuperview()
+            timer.invalidate()
+        }
+    }
+
     @objc func onTap() {
+        if (timeToTurnOnUserInteraction > 0) {
+            return
+        }
+
         advertisementView?.pauseAdvertisement()
         blockingView?.removeFromSuperview()
         if let segueIdentifier = segueAfterDismiss?.segueIdentifier {
