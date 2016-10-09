@@ -28,7 +28,6 @@ class AdvertisementCollectionViewCell: UICollectionViewCell {
             addSubview(advertisementView)
             addConstraintsFor(subview: advertisementView)
         }
-        print(advertisementView)
     }
 
     override init(frame: CGRect) {
