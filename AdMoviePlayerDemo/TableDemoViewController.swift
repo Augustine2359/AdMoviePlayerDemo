@@ -17,7 +17,7 @@ extension TableDemoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 10 == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement") as! AdvertisementTableViewCell
-            cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+            cell.videoURL = "http://hitokuse.com/videos/top-video.mp4"
             cell.advertisementView.delegate = self
             return cell
         }

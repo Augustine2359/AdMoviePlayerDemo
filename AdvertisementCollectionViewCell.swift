@@ -11,6 +11,11 @@ import UIKit
 
 class AdvertisementCollectionViewCell: UICollectionViewCell {
     @IBOutlet var advertisementView: AdvertisementView!
+    var videoURL: String? {
+        didSet {
+            advertisementView.videoURL = videoURL
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -23,11 +28,7 @@ class AdvertisementCollectionViewCell: UICollectionViewCell {
         addSubview(advertisementView)
         addConstraintsFor(subview: advertisementView)
     }
-    
-    func playAdvertisement(urlString:String) {
-        advertisementView.videoURL = urlString
-    }
-    
+
     func addConstraintsFor(subview: UIView) {
         let leftConstraint = NSLayoutConstraint(item: contentView, attribute: .trailing, relatedBy: .equal, toItem: subview, attribute: .trailing, multiplier: 1, constant: 0)
         let rightConstraint = NSLayoutConstraint(item: contentView, attribute: .leading, relatedBy: .equal, toItem: subview, attribute: .leading, multiplier: 1, constant: 0)

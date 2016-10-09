@@ -40,13 +40,13 @@ extension CollectionDemoViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (indexPath.row % 5 == 3) {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Advertisement", for: indexPath) as? AdvertisementCollectionViewCell {
-                cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+                cell.videoURL = "http://hitokuse.com/videos/top-video.mp4"
                 cell.advertisementView.delegate = self
                 return cell
             }
 
             let cell = AdvertisementCollectionViewCell(frame: .zero)
-            cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+            cell.videoURL = "http://hitokuse.com/videos/top-video.mp4"
             cell.advertisementView.delegate = self
             return cell
         }
