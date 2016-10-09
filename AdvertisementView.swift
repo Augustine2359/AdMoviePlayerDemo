@@ -106,14 +106,7 @@ class AdvertisementView: UIView {
     }
     
     func onTap() {
-        let script = "document.getElementsByTagName('video')[0].pause();"
-
-        if let wkWebView = webView as? WKWebView {
-            wkWebView.evaluateJavaScript(script, completionHandler: nil)
-        }
-        else if let uiWebView = webView as? UIWebView {
-            uiWebView.stringByEvaluatingJavaScript(from: script)
-        }
+        pauseAdvertisement()
         
         guard (redirectURLString == nil) else {
             let url = URL(string: redirectURLString!)!
@@ -121,6 +114,17 @@ class AdvertisementView: UIView {
             
             return
         }
+    }
+    
+    func pauseAdvertisement() {
+        let script = "document.getElementsByTagName('video')[0].pause();"
+        
+        if let wkWebView = webView as? WKWebView {
+            wkWebView.evaluateJavaScript(script, completionHandler: nil)
+        }
+        else if let uiWebView = webView as? UIWebView {
+            uiWebView.stringByEvaluatingJavaScript(from: script)
+        }        
     }
 }
 

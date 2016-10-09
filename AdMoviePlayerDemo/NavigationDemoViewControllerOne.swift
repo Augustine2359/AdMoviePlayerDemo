@@ -20,7 +20,10 @@ class NavigationDemoViewControllerOne: UIViewController {
 
     @IBAction func onTap(sender: UIButton) {
         seguesPerformed += 1
-        performSegue(withIdentifier: "NavigationDemoSegue", sender: nil)
+        
+        AdvertisementViewFullScreenManager.sharedInstance.blockScreen(withVideo: "http://hitokuse.com/videos/top-video.mp4", redirectURLString: "http://hitokuse.com")
+        
+//        performSegue(withIdentifier: "NavigationDemoSegue", sender: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
