@@ -22,18 +22,17 @@ class AdvertisementView: UIView {
         defaultInitializations()
     }
     
-    init() {
+    override init(frame: CGRect) {
         button = UIButton(type: .custom)
-        super.init(frame: .zero)
+        super.init(frame: frame)
         
         defaultInitializations()
     }
-    
+
     func defaultInitializations() {
         backgroundColor = UIColor.clear
         button.addTarget(self, action: #selector(onTap), for: UIControlEvents.touchUpInside)
         addConfigurationToWebView()
-        translatesAutoresizingMaskIntoConstraints = false
         webView!.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         addSubview(webView!)
