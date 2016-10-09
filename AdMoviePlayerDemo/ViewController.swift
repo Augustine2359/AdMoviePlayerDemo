@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        advertisementView.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+        advertisementView.videoURL = "http://hitokuse.com/videos/top-video.mp4"
     }
 }
 

@@ -25,7 +25,7 @@ class AdvertisementCollectionViewCell: UICollectionViewCell {
     }
     
     func playAdvertisement(urlString:String) {
-        advertisementView.playAdvertisement(urlString: urlString)
+        advertisementView.videoURL = urlString
     }
     
     func addConstraintsFor(subview: UIView) {

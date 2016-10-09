@@ -18,6 +18,20 @@ class AdvertisementView: UIView {
     var webView: UIView?
     var button: UIButton
     var delegate: AdvertisementViewDelegate?
+    var videoURL: String? {
+        didSet {
+            if let newValue = videoURL {
+                let url = URL(string: newValue)
+                let urlRequest = URLRequest(url: url!)
+                if let wkWebView = webView as? WKWebView {
+                    wkWebView.load(urlRequest)
+                }
+                else if let uiWebView = webView as? UIWebView {
+                    uiWebView.loadRequest(urlRequest)
+                }
+            }
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         button = UIButton(type: .custom)
@@ -96,22 +110,10 @@ class AdvertisementView: UIView {
             useUIWebView()
         }
     }
-    
-    func playAdvertisement(urlString:String) {
-        if let url = URL(string: urlString) {
-            let urlRequest = URLRequest(url: url)
-            if let wkWebView = webView as? WKWebView {
-                wkWebView.load(urlRequest)
-            }
-            else if let uiWebView = webView as? UIWebView {
-                uiWebView.loadRequest(urlRequest)
-            }
-        }
-    }
-    
+
     func onTap() {
         pauseAdvertisement()
-        delegate?.onTapAdvertisement()        
+        delegate?.onTapAdvertisement()
     }
     
     func pauseAdvertisement() {
