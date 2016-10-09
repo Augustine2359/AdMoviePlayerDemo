@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 
+protocol AdvertisementViewFullScreenManagerProtocol {
+    func onDismissFullScreenAdvertisement()
+}
+
 class AdvertisementViewFullScreenManager {
     static let sharedInstance = AdvertisementViewFullScreenManager()
     var blockingView: UIView?
     var advertisementView: AdvertisementView?
-    
+    var segueAfterDismiss: (performingViewController: UIViewController, segueIdentifier: String)?
+
     func blockScreen(withVideo stringURL:String, redirectURLString:String) {
         if let window = UIApplication.shared.keyWindow {
             blockingView = UIView(frame: CGRect(x: 0, y: 0, width: window.frame.size.width, height: window.frame.size.height))
@@ -36,6 +41,10 @@ class AdvertisementViewFullScreenManager {
     @objc func onTap() {
         advertisementView?.pauseAdvertisement()
         blockingView?.removeFromSuperview()
+        if let segueIdentifier = segueAfterDismiss?.segueIdentifier {
+            segueAfterDismiss?.performingViewController.performSegue(withIdentifier: segueIdentifier, sender: nil)
+        }
+        segueAfterDismiss = nil
     }
     
     func addConstraintsFor(superview: UIView, subview: UIView) {
