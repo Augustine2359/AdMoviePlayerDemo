@@ -20,7 +20,13 @@ extension CollectionDemoViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if (indexPath.row % 10 == 5) {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Advertisement", for: indexPath) as! AdvertisementCollectionViewCell
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Advertisement", for: indexPath) as?AdvertisementCollectionViewCell {
+                cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
+                cell.redirectURL = "http://hitokuse.com"
+                return cell
+            }
+
+            let cell = AdvertisementCollectionViewCell(frame: .zero)
             cell.playAdvertisement(urlString: "http://hitokuse.com/videos/top-video.mp4")
             cell.redirectURL = "http://hitokuse.com"
             return cell

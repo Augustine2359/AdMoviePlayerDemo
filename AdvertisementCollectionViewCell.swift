@@ -22,8 +22,23 @@ class AdvertisementCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        if (advertisementView == nil) {
+            advertisementView = AdvertisementView()
+            advertisementView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(advertisementView)
+            addConstraintsFor(subview: advertisementView)
+        }
+        print(advertisementView)
     }
 
+    override init(frame: CGRect) {
+        advertisementView = AdvertisementView()
+        advertisementView.translatesAutoresizingMaskIntoConstraints = false
+        super.init(frame: frame)
+        addSubview(advertisementView)
+        addConstraintsFor(subview: advertisementView)
+    }
+    
     func playAdvertisement(urlString:String) {
         advertisementView.playAdvertisement(urlString: urlString)
     }
