@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jyq-yP-Ghs" id="9h0-8G-2WU">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AS4-M6-mXx" id="e8M-zv-dBg">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-Gy-Wqr" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
@@ -149,25 +149,25 @@
                                         </view>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Advertisement" id="3MF-nm-bGG" customClass="AdvertisementCollectionViewCell" customModule="AdMoviePlayerDemo" customModuleProvider="target">
-                                        <rect key="frame" x="73.5" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="73" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJK-x0-6UE" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Y-mf-7Ct" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="gJK-x0-6UE" firstAttribute="leading" secondItem="3MF-nm-bGG" secondAttribute="leading" id="EbA-yr-zHe"/>
-                                            <constraint firstAttribute="trailing" secondItem="gJK-x0-6UE" secondAttribute="trailing" id="I6z-k5-SDw"/>
-                                            <constraint firstAttribute="bottom" secondItem="gJK-x0-6UE" secondAttribute="bottom" id="htc-qW-yux"/>
-                                            <constraint firstItem="gJK-x0-6UE" firstAttribute="top" secondItem="3MF-nm-bGG" secondAttribute="top" id="zkW-tq-qVS"/>
+                                            <constraint firstItem="G4Y-mf-7Ct" firstAttribute="leading" secondItem="3MF-nm-bGG" secondAttribute="leading" id="3bu-h4-rK6"/>
+                                            <constraint firstItem="G4Y-mf-7Ct" firstAttribute="top" secondItem="3MF-nm-bGG" secondAttribute="top" id="8hc-Fc-fdC"/>
+                                            <constraint firstAttribute="trailing" secondItem="G4Y-mf-7Ct" secondAttribute="trailing" id="9JA-Yy-9eo"/>
+                                            <constraint firstAttribute="bottom" secondItem="G4Y-mf-7Ct" secondAttribute="bottom" id="YT0-Tz-g1K"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="advertisementView" destination="gJK-x0-6UE" id="1Yz-M5-2nH"/>
+                                            <outlet property="advertisementView" destination="G4Y-mf-7Ct" id="rJX-xD-yEz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

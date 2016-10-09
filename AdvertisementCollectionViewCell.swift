@@ -22,12 +22,6 @@ class AdvertisementCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        if (advertisementView == nil) {
-            advertisementView = AdvertisementView()
-            advertisementView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(advertisementView)
-            addConstraintsFor(subview: advertisementView)
-        }
     }
 
     override init(frame: CGRect) {
