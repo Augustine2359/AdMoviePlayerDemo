@@ -20,6 +20,7 @@
 		3D53A6301DA9B7D600D47879 /* AdvertisementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */; };
 		3D53A6321DA9C2EE00D47879 /* CollectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */; };
 		3DF3AAB11DAA97AB0088135F /* AdvertisementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */; };
+		3DF3AAB31DAAA7920088135F /* NavigationDemoViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3AAB21DAAA7920088135F /* NavigationDemoViewControllerOne.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertisementTableViewCell.swift; path = AdMoviePlayerDemo/AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
 		3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDemoViewController.swift; sourceTree = "<group>"; };
 		3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DF3AAB21DAAA7920088135F /* NavigationDemoViewControllerOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDemoViewControllerOne.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				3D0168901DA80F8600454C8A /* ViewController.swift */,
 				3D53A62B1DA9B20000D47879 /* TableDemoViewController.swift */,
 				3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */,
+				3DF3AAB21DAAA7920088135F /* NavigationDemoViewControllerOne.swift */,
 				3D0168921DA80F8600454C8A /* Main.storyboard */,
 				3D0168951DA80F8600454C8A /* Assets.xcassets */,
 				3D0168971DA80F8600454C8A /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 				3DF3AAB11DAA97AB0088135F /* AdvertisementCollectionViewCell.swift in Sources */,
 				3D53A6321DA9C2EE00D47879 /* CollectionDemoViewController.swift in Sources */,
 				3D01688F1DA80F8600454C8A /* AppDelegate.swift in Sources */,
+				3DF3AAB31DAAA7920088135F /* NavigationDemoViewControllerOne.swift in Sources */,
 				3D53A6301DA9B7D600D47879 /* AdvertisementTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

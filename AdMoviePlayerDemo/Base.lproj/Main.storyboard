@@ -195,6 +195,89 @@
             </objects>
             <point key="canvasLocation" x="1219" y="1362"/>
         </scene>
+        <!--NavigationController-->
+        <scene sceneID="UGr-nv-Rnv">
+            <objects>
+                <navigationController id="lmN-Mr-17x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="NavigationController" id="SYI-Ib-gFc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZgO-i6-IEx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X7a-zA-7YF" kind="relationship" relationship="rootViewController" id="7NM-di-KWk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yU-m9-tkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="2063"/>
+        </scene>
+        <!--Navigation Demo View Controller One-->
+        <scene sceneID="xUM-iO-OUa">
+            <objects>
+                <viewController id="X7a-zA-7YF" customClass="NavigationDemoViewControllerOne" customModule="AdMoviePlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pjk-jE-EmG"/>
+                        <viewControllerLayoutGuide type="bottom" id="VJq-Lq-Lsz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hCd-QU-zy6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bot-DE-mGB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="USc-4g-rET"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TQ-wB-14I">
+                                <state key="normal" title="Push next screen"/>
+                                <connections>
+                                    <action selector="onTapWithSender:" destination="X7a-zA-7YF" eventType="touchUpInside" id="rwV-DK-pyx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bot-DE-mGB" firstAttribute="leading" secondItem="hCd-QU-zy6" secondAttribute="leading" id="4xp-9N-85d"/>
+                            <constraint firstItem="1TQ-wB-14I" firstAttribute="leading" secondItem="hCd-QU-zy6" secondAttribute="leading" id="GpF-TK-oxc"/>
+                            <constraint firstItem="1TQ-wB-14I" firstAttribute="top" secondItem="Bot-DE-mGB" secondAttribute="bottom" constant="8" id="imV-PQ-2ji"/>
+                            <constraint firstItem="Bot-DE-mGB" firstAttribute="top" secondItem="Pjk-jE-EmG" secondAttribute="bottom" id="qAX-AG-KvM"/>
+                            <constraint firstAttribute="trailing" secondItem="1TQ-wB-14I" secondAttribute="trailing" id="twf-GM-Dc1"/>
+                            <constraint firstAttribute="trailing" secondItem="Bot-DE-mGB" secondAttribute="trailing" id="wVc-a6-PtH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YT5-kp-Xuv"/>
+                    <connections>
+                        <outlet property="button" destination="1TQ-wB-14I" id="boq-8a-10T"/>
+                        <outlet property="label" destination="Bot-DE-mGB" id="SP8-OJ-hPe"/>
+                        <segue destination="jgP-rJ-xzS" kind="show" identifier="NavigationDemoSegue" id="j9g-XP-clm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6m-cL-7GZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039.2" y="2059.5202398800602"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g0K-X4-Xmt">
+            <objects>
+                <viewController id="jgP-rJ-xzS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kwa-cF-KUc"/>
+                        <viewControllerLayoutGuide type="bottom" id="U2E-kE-FRd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PTV-10-KCa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6V-nz-Lnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="2062"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PRN-iL-Fw5">
             <objects>
@@ -208,6 +291,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kRx-nI-lSF"/>
                         <segue destination="WLM-fZ-Odg" kind="relationship" relationship="viewControllers" id="CvL-SX-b2c"/>
                         <segue destination="il1-U7-sqe" kind="relationship" relationship="viewControllers" id="Pkz-xy-EvJ"/>
+                        <segue destination="lmN-Mr-17x" kind="relationship" relationship="viewControllers" id="C5V-9E-srN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zru-Rl-q8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
