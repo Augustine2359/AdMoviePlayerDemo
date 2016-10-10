@@ -11,9 +11,9 @@ import UIKit
 
 class AdvertisementCollectionViewCell: UICollectionViewCell {
     @IBOutlet var advertisementView: AdvertisementView!
-    var videoURL: String? {
+    var mediaURL: String? {
         didSet {
-            advertisementView.videoURL = videoURL
+            advertisementView.mediaURL = mediaURL
         }
     }
     

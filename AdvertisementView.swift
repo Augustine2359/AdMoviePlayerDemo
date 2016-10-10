@@ -18,9 +18,9 @@ class AdvertisementView: UIView {
     var webView: UIView?
     var button: UIButton
     var delegate: AdvertisementViewDelegate?
-    var videoURL: String? {
+    var mediaURL: String? {
         didSet {
-            if let newValue = videoURL {
+            if let newValue = mediaURL {
                 let url = URL(string: newValue)
                 let urlRequest = URLRequest(url: url!)
                 if let wkWebView = webView as? WKWebView {

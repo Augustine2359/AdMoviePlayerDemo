@@ -23,10 +23,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gis-eE-mlq" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzF-Gq-Yjh" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UzF-Gq-Yjh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="8T4-Xs-U6M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UzF-Gq-Yjh" secondAttribute="trailing" constant="52" id="Aof-UD-91R"/>
                             <constraint firstAttribute="trailing" secondItem="gis-eE-mlq" secondAttribute="trailing" id="Sjc-4S-of9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UzF-Gq-Yjh" secondAttribute="bottom" constant="84" id="cnL-UF-WoU"/>
+                            <constraint firstItem="UzF-Gq-Yjh" firstAttribute="top" secondItem="gis-eE-mlq" secondAttribute="bottom" constant="52.5" id="jVf-Bg-InO"/>
                             <constraint firstItem="gis-eE-mlq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m7l-Vk-KAB"/>
                             <constraint firstItem="gis-eE-mlq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qL1-sX-nKc"/>
                             <constraint firstItem="gis-eE-mlq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="y20-Vc-W9R"/>
@@ -34,7 +41,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Default" id="ZpH-HK-7c9"/>
                     <connections>
-                        <outlet property="advertisementView" destination="gis-eE-mlq" id="LlP-Bu-Hhe"/>
+                        <outletCollection property="advertisementViews" destination="gis-eE-mlq" id="qSB-Jq-2Re"/>
+                        <outletCollection property="advertisementViews" destination="UzF-Gq-Yjh" id="rIj-xt-FGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

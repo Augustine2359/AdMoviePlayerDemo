@@ -29,7 +29,7 @@ class AdvertisementViewFullScreenManager {
             blockingView!.addSubview(advertisementView!)
             addConstraintsFor(superview: blockingView!, subview: advertisementView!)
 
-            advertisementView?.videoURL = stringURL
+            advertisementView?.mediaURL = stringURL
             advertisementView?.delegate = self
 
             let touch = UITapGestureRecognizer(target: self, action: #selector(onTap))

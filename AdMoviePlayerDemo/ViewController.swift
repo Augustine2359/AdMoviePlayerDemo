@@ -10,12 +10,14 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController {
-    @IBOutlet var advertisementView: AdvertisementView!
-
+    @IBOutlet var advertisementViews: [AdvertisementView]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        advertisementView.delegate = self
+        advertisementViews.forEach { (advertisementView) in
+            advertisementView.delegate = self
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +27,9 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        advertisementView.videoURL = "http://hitokuse.com/videos/top-video.mp4"
+        
+        advertisementViews[0].mediaURL = "http://hitokuse.com/videos/top-video.mp4"
+        advertisementViews[1].mediaURL = "http://hitokuse.com/images/fitad-image.png"
     }
 }
 
