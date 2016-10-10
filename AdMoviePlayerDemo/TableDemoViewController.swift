@@ -34,7 +34,7 @@ extension TableDemoViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension TableDemoViewController: AdvertisementViewDelegate {
-    func onTapAdvertisement() {
+    func onTapAdvertisement(advertisementView _: AdvertisementView) {
         let url = URL(string: "http://hitokuse.com")!
         UIApplication.shared.openURL(url)
     }

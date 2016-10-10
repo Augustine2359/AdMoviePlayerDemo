@@ -34,8 +34,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AdvertisementViewDelegate {
-    func onTapAdvertisement() {
-        let url = URL(string: "http://hitokuse.com")!
-        UIApplication.shared.openURL(url)
+    func onTapAdvertisement(advertisementView: AdvertisementView) {
+        var url: URL?
+        switch advertisementView {
+        case advertisementViews[0]:
+            url = URL(string: "http://hitokuse.com")
+        default:
+            url = URL(string: "http://fit-ad.jp")
+        }
+        UIApplication.shared.openURL(url!)
     }
 }

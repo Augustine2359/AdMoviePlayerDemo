@@ -58,7 +58,7 @@ extension CollectionDemoViewController: UICollectionViewDataSource, UICollection
 }
 
 extension CollectionDemoViewController: AdvertisementViewDelegate {
-    func onTapAdvertisement() {
+    func onTapAdvertisement(advertisementView: AdvertisementView) {
         let url = URL(string: "http://hitokuse.com")!
         UIApplication.shared.openURL(url)
     }

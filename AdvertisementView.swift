@@ -11,7 +11,7 @@ import UIKit
 import WebKit
 
 protocol AdvertisementViewDelegate {
-    func onTapAdvertisement()
+    func onTapAdvertisement(advertisementView: AdvertisementView)
 }
 
 class AdvertisementView: UIView {
@@ -113,7 +113,7 @@ class AdvertisementView: UIView {
 
     func onTap() {
         pauseAdvertisement()
-        delegate?.onTapAdvertisement()
+        delegate?.onTapAdvertisement(advertisementView: self)
     }
     
     func pauseAdvertisement() {

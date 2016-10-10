@@ -89,7 +89,7 @@ class AdvertisementViewFullScreenManager {
 }
 
 extension AdvertisementViewFullScreenManager: AdvertisementViewDelegate {
-    func onTapAdvertisement() {
+    func onTapAdvertisement(advertisementView _: AdvertisementView) {
         let url = URL(string: "http://hitokuse.com")!
         UIApplication.shared.openURL(url)
         advertisementView?.pauseAdvertisement()
