@@ -18,7 +18,7 @@ public class AdvertisementViewFullScreenManager {
     var countdownTimer: Timer?
     var timeToTurnOnUserInteraction: Int?
     
-    public func blockScreen(withVideo stringURL:String, redirectURLString:String) {
+    public func blockScreen(withVideo stringURL:String) {
         if let window = UIApplication.shared.keyWindow {
             blockingView = UIView(frame: CGRect(x: 0, y: 0, width: window.frame.size.width, height: window.frame.size.height))
             blockingView!.backgroundColor = UIColor(white: 0, alpha: 0.5)

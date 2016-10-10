@@ -23,7 +23,7 @@ class NavigationDemoViewControllerOne: UIViewController {
     @IBAction func onTap(sender: UIButton) {
         seguesPerformed += 1
         
-        AdvertisementViewFullScreenManager.sharedInstance.blockScreen(withVideo: "http://hitokuse.com/videos/top-video.mp4", redirectURLString: "http://hitokuse.com")
+        AdvertisementViewFullScreenManager.sharedInstance.blockScreen(withVideo: "http://hitokuse.com/videos/top-video.mp4")
         
         AdvertisementViewFullScreenManager.sharedInstance.segueAfterDismiss = (self, "NavigationDemoSegue")
     }
