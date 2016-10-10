@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AdvertisementPlayer
 
 class CollectionDemoViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!

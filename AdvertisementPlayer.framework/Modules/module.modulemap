@@ -1,0 +1,10 @@
+framework module AdvertisementPlayer {
+  umbrella header "AdvertisementPlayer.h"
+
+  export *
+  module * { export * }
+}
+
+module AdvertisementPlayer.Swift {
+    header "AdvertisementPlayer-Swift.h"
+}

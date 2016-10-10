@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AdvertisementPlayer
 
 class TableDemoViewController: UIViewController {
     @IBOutlet var tableView: UITableView!

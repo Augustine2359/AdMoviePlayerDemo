@@ -20,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gis-eE-mlq" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gis-eE-mlq" customClass="AdvertisementView" customModule="AdvertisementPlayer">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzF-Gq-Yjh" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzF-Gq-Yjh" customClass="AdvertisementView" customModule="AdvertisementPlayer">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -41,8 +41,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Default" id="ZpH-HK-7c9"/>
                     <connections>
-                        <outletCollection property="advertisementViews" destination="gis-eE-mlq" id="qSB-Jq-2Re"/>
-                        <outletCollection property="advertisementViews" destination="UzF-Gq-Yjh" id="rIj-xt-FGd"/>
+                        <outletCollection property="advertisementViews" destination="gis-eE-mlq" collectionClass="NSMutableArray" id="2HW-MD-Oqg"/>
+                        <outletCollection property="advertisementViews" destination="UzF-Gq-Yjh" collectionClass="NSMutableArray" id="WAe-tf-Ajy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jyq-yP-Ghs" id="9h0-8G-2WU">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -76,22 +76,22 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AS4-M6-mXx" id="e8M-zv-dBg">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzB-Gy-Wqr" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zG-Cb-p1G" customClass="AdvertisementView" customModule="AdvertisementPlayer">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TzB-Gy-Wqr" firstAttribute="leading" secondItem="e8M-zv-dBg" secondAttribute="leading" id="1Fx-zb-4ZC"/>
-                                                <constraint firstItem="TzB-Gy-Wqr" firstAttribute="top" secondItem="e8M-zv-dBg" secondAttribute="top" id="CJn-WN-lJo"/>
-                                                <constraint firstAttribute="bottom" secondItem="TzB-Gy-Wqr" secondAttribute="bottom" id="eI7-a0-oCQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="TzB-Gy-Wqr" secondAttribute="trailing" id="mdF-WH-fKS"/>
+                                                <constraint firstAttribute="bottom" secondItem="8zG-Cb-p1G" secondAttribute="bottom" id="Arq-tO-s2X"/>
+                                                <constraint firstItem="8zG-Cb-p1G" firstAttribute="top" secondItem="e8M-zv-dBg" secondAttribute="top" id="PMc-KP-vMe"/>
+                                                <constraint firstItem="8zG-Cb-p1G" firstAttribute="leading" secondItem="e8M-zv-dBg" secondAttribute="leading" id="mr1-1A-pJ0"/>
+                                                <constraint firstAttribute="trailing" secondItem="8zG-Cb-p1G" secondAttribute="trailing" id="xW2-AU-lLn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="advertisementView" destination="TzB-Gy-Wqr" id="oU0-Xm-L1D"/>
+                                            <outlet property="advertisementView" destination="8zG-Cb-p1G" id="uGB-Im-h99"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -158,13 +158,13 @@
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Advertisement" id="3MF-nm-bGG" customClass="AdvertisementCollectionViewCell" customModule="AdMoviePlayerDemo" customModuleProvider="target">
-                                        <rect key="frame" x="73.5" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="73" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Y-mf-7Ct" customClass="AdvertisementView" customModule="AdMoviePlayerDemo" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Y-mf-7Ct" customClass="AdvertisementView" customModule="AdvertisementPlayer">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -296,10 +296,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kRx-nI-lSF"/>
-                        <segue destination="WLM-fZ-Odg" kind="relationship" relationship="viewControllers" id="CvL-SX-b2c"/>
-                        <segue destination="il1-U7-sqe" kind="relationship" relationship="viewControllers" id="Pkz-xy-EvJ"/>
-                        <segue destination="lmN-Mr-17x" kind="relationship" relationship="viewControllers" id="C5V-9E-srN"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="YdX-a3-e38"/>
+                        <segue destination="WLM-fZ-Odg" kind="relationship" relationship="viewControllers" id="FHC-Tj-vSX"/>
+                        <segue destination="il1-U7-sqe" kind="relationship" relationship="viewControllers" id="lqm-aX-bVu"/>
+                        <segue destination="lmN-Mr-17x" kind="relationship" relationship="viewControllers" id="AFd-pZ-8sQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zru-Rl-q8R" userLabel="First Responder" sceneMemberID="firstResponder"/>

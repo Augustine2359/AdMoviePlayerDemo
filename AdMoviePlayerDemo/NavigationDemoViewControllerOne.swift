@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AdvertisementPlayer
 
 class NavigationDemoViewControllerOne: UIViewController {
     @IBOutlet var label: UILabel!

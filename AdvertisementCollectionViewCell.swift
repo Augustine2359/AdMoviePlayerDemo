@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import AdvertisementPlayer
 
 class AdvertisementCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var advertisementView: AdvertisementView!
+    @IBOutlet var advertisementView: AdvertisementPlayer.AdvertisementView!
     var mediaURL: String? {
         didSet {
             advertisementView.mediaURL = mediaURL

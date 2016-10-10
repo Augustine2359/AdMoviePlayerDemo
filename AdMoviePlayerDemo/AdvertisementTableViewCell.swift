@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import AdvertisementPlayer
 
-class AdvertisementTableViewCell: UITableViewCell {
+@objc class AdvertisementTableViewCell: UITableViewCell {
     @IBOutlet var advertisementView: AdvertisementView!
     var mediaURL: String? {
         didSet {

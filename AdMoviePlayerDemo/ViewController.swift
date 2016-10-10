@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebKit
+import AdvertisementPlayer
 
 class ViewController: UIViewController {
     @IBOutlet var advertisementViews: [AdvertisementView]!
