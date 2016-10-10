@@ -58,9 +58,9 @@
 		3D0168BD1DA80FA800454C8A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3D53A62B1DA9B20000D47879 /* TableDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDemoViewController.swift; sourceTree = "<group>"; };
 		3D53A62D1DA9B5EB00D47879 /* AdvertisementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
-		3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertisementTableViewCell.swift; path = AdMoviePlayerDemo/AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
+		3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
 		3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDemoViewController.swift; sourceTree = "<group>"; };
-		3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvertisementCollectionViewCell.swift; path = ../AdvertisementCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DF3AAB21DAAA7920088135F /* NavigationDemoViewControllerOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDemoViewControllerOne.swift; sourceTree = "<group>"; };
 		3DF3AAB41DAAA9E90088135F /* AdvertisementViewFullScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementViewFullScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				3D53A62D1DA9B5EB00D47879 /* AdvertisementView.swift */,
-				3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */,
-				3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */,
 				3DF3AAB41DAAA9E90088135F /* AdvertisementViewFullScreen.swift */,
 				3D01688D1DA80F8600454C8A /* AdMoviePlayerDemo */,
 				3D0168A21DA80F8700454C8A /* AdMoviePlayerDemoTests */,
@@ -122,7 +120,9 @@
 				3D01688E1DA80F8600454C8A /* AppDelegate.swift */,
 				3D0168901DA80F8600454C8A /* ViewController.swift */,
 				3D53A62B1DA9B20000D47879 /* TableDemoViewController.swift */,
+				3D53A62F1DA9B7D600D47879 /* AdvertisementTableViewCell.swift */,
 				3D53A6311DA9C2EE00D47879 /* CollectionDemoViewController.swift */,
+				3DF3AAB01DAA97AB0088135F /* AdvertisementCollectionViewCell.swift */,
 				3DF3AAB21DAAA7920088135F /* NavigationDemoViewControllerOne.swift */,
 				3D0168921DA80F8600454C8A /* Main.storyboard */,
 				3D0168951DA80F8600454C8A /* Assets.xcassets */,
